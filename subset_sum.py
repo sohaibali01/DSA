@@ -11,7 +11,7 @@ def two_sum_On2(arr, S):
   return outputList
 
 def two_sum_Onlog2n(arr, S):
-  # average solution having linear complexity O(nlogn + nlogn)
+  # average solution having logarithmic complexity O(nlogn + nlogn)
   # uses a binary search tree to represent arr, then for each item of arr, we search for S minus item within bst in O(logn) time
   outputList=[]
   # https://stackoverflow.com/questions/9755721/how-can-building-a-heap-be-on-time-complexity
@@ -35,6 +35,16 @@ def two_sum_On(arr, S):
     hashTable[item] = item
   return outputList
   
+def two_sum_On_worst_space(arr, S):
+   # constraint: 0 < arr[i] < M = 10**6 for any i
+   auxillaryList = [0] * 10**6
+   outputList = []
+   for item in arr:
+      auxillaryList[item] = 1
+   for item in arr:
+      if S>item and auxillaryList[S-item]==1:
+          outputList.append([item, S-item])
+   return outputList
   
 if __name__ == '__main__':
     print(two_sum_On2([3,5,2,-4,8,11],7))
