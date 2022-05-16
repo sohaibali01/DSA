@@ -11,12 +11,12 @@ def two_sum_On2(arr, S):
 def two_sum_On(arr, S):
   # best solution having linear complexity O(n)
   # uses a dictionary to store elements of arr as key, val pair
-  # we iterate over all items, and S minus item is present in te dictionary, insert it into output list
+  # we iterate over all items, and if S minus item is present in te dictionary, insert it into output list
   outputList=[]
   hashTable = dict()
   for item in arr: 
     diffItem = S - item
-    if diffItem in hashTable.keys():
+    if diffItem in hashTable.keys():  # searching a dictionary has O(1) time complexity
       outputList.append([item, diffItem])
     hashTable[item] = item
   return outputList
