@@ -1,4 +1,6 @@
 
+import heapq
+
 def two_sum_On2(arr, S):
   # naive solution having quadratic complexity O(n^2)
   outputList=[]
@@ -6,6 +8,18 @@ def two_sum_On2(arr, S):
       for item2 in arr:
           if item!=item2 and item+item2==S:
               outputList.append([item, item2])
+  return outputList
+
+def two_sum_Onlog2n(arr, S):
+  # average solution having linear complexity O(nlogn + nlogn)
+  # uses a binary search tree to represent arr, then for each item of arr, we search for S minus item within bst in O(logn) time
+  outputList=[]
+  # https://stackoverflow.com/questions/9755721/how-can-building-a-heap-be-on-time-complexity
+  heapq.heapify(arr) # inplace operation, at worst O(nlogn), from now on arr is a heap
+  for item in arr:
+    if S-item in arr:
+         outputList.append([item, S-item])
+
   return outputList
 
 def two_sum_On(arr, S):
