@@ -43,6 +43,28 @@ vector<vector<int>> two_sum_Onlog2n(vector<int> arr, int S)
     return outputList;
 }
 
+vector<vector<int>> two_sum_On(vector<int> arr, int S)
+{
+    vector<vector<int>> outputList;
+    vector<int> outsingle=vector<int>(2);
+    
+    unordered_map<int,int> hashMap;
+
+    for (int item: arr)
+        hashMap[item] = S-item;
+             
+    for (int item: arr)
+    {
+        if (hashMap.find(S-item)!=hashMap.end())
+        {
+              outsingle[0] = item;
+              outsingle[1] = S-item;
+              outputList.push_back(outsingle);
+        }
+    }
+    return outputList;
+}
+
 int main() {
     vector<int> arr = vector<int>{3,5,2,-4,8,11};
     vector<vector<int>> out = two_sum_On(arr, 7);
