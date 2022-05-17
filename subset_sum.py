@@ -36,9 +36,10 @@ def two_sum_On(arr, S):
   return outputList
   
 def two_sum_On_worst_space(arr, S):
-   # this also has O(n) time complexity but space complexity of O(M) where M >> n
    # constraint: 0 < arr[i] < M = 10**6 for any i
-   auxillaryList = [0] * 10**6
+   # this also has O(n) time complexity but space complexity of O(M) where M >> n
+   # additional O(M) https://stackoverflow.com/questions/55896618/python-list-declaration-without-initialization
+   auxillaryList = [0] * 10**6 
    outputList = []
    for item in arr:
       auxillaryList[item] = 1
