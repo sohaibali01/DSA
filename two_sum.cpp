@@ -11,7 +11,7 @@ vector<vector<int>> two_sum_On(vector<int> &arr, int S)
     for (int item: arr)
         for (int item2: arr) 
         {
-            if (item!=item2 and item+item2==S)
+            if (item!=item2 && item+item2==S)
             {
               outsingle[0] = item;
               outsingle[1] = item2;
