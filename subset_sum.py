@@ -49,11 +49,12 @@ def two_sum_On_worst_space(arr, S):
 
 
 # A recursive solution for subset sum problem
-  
 # Returns true if there is a subset 
 # of set[] with sun equal to given sum
+
+# https://www.interviewbit.com/blog/subset-sum-problem/
 def isSubsetSum(set, n, sum) :
-    
+ 
     # Base Cases
     if (sum == 0) :
         return True
