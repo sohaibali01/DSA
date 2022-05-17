@@ -4,7 +4,7 @@
 using namespace std;
 
 
-vector<vector<int>> two_sum_On(vector<int> &arr, int S)
+vector<vector<int>> two_sum_On2(vector<int> &arr, int S)
 {
     vector<vector<int>> outputList;
     vector<int> outsingle=vector<int>(2);
